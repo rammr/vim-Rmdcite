@@ -1,1 +1,1 @@
-au BufRead,BufNewFile *.Rmd     set filetype=Rmd
+autocmd BufNewFile,BufRead *.Rmd setfiletype Rmd
