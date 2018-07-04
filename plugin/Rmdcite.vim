@@ -12,7 +12,7 @@ function! Rmdcite#init() " {{{1
   "
   " Check if bibtex is available
   "
-  if executable('bibtex')
+  if !executable('bibtex')
     echom "Warning: bibtex completion not available"
     echom "         Missing executable: bibtex"
     let s:bibtex = 0
