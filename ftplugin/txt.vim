@@ -1,5 +1,5 @@
-if exists('g:autocite_enabled') && !g:autocite_enabled
+if exists('g:Rmdcite_enabled') && !g:Rmdcite_enabled
     finish
 endif
 
-call autocite#init()
+call Rmdcite#init()
