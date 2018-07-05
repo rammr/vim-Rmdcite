@@ -24,12 +24,13 @@ endfunction
 
 let g:Rmdcite_complete_patterns = {
          \ 'bib0':  '\C\a*\[cite:\_\s*[^:\]]*',
-         \ 'bib':   '\C\a*\[`@`\_\s*[^:\]]*'
+         \ 'bib':   '\C\a*\[@\_\s*[^:\]]*'
          \ }
 
 
 function! Rmdcite#Complete(findstart, base) " {{{0
   if a:findstart
+    echom "findstart!"
     "
     " First call:  Find start of text to be completed
     "
