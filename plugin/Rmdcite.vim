@@ -24,7 +24,7 @@ endfunction
 
 let g:Rmdcite_complete_patterns = {
          \ 'bib0':  '\C\a*\[cite:\_\s*[^:\]]*',
-         \ 'bib':   '\C\a*\[@\_\s*[^:\]]*'
+         \ 'bib':   '\v\C\a*\[@\_\s*[^:\]]*'
          \ }
 
 
