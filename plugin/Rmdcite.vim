@@ -23,7 +23,7 @@ endfunction
 
 
 let g:Rmdcite_complete_patterns = {
-         \ 'bib':   '\C\a*\[@\_\s*[^:\]]*',
+         \ 'bib':   '\C\a*\[\@\_\s*\]*',
          \ 'bib0':  '\C\a*\[cite:\_\s*[^:\]]*',
          \ 'bibX':  'grukgruk'
          \ }
