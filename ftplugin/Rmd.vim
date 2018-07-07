@@ -3,4 +3,5 @@ if exists('g:Rmdcite_enabled') && !g:Rmdcite_enabled
     finish
 endif
 
+echom "Starting Rmdcite#init"
 call Rmdcite#init()
