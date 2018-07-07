@@ -42,6 +42,7 @@ function! Rmdcite#Complete(findstart, base) " {{{0
     let pos  = col('.') - 1
     let line = getline('.')[:pos-1]
     for [type, pattern] in items(g:Rmdcite_complete_patterns)
+      echom "testing pattern"
       if line =~ pattern . '$'
         let s:completion_type = type
         while pos > 0
