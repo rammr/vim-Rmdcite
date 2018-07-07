@@ -24,20 +24,19 @@ endfunction
 
 let g:Rmdcite_complete_patterns = {
          \ 'bib0':  '\C\a*\[cite:\_\s*[^:\]]*',
-         \ 'bib':   '\v\C\a*\[@\_\s*[^:\]]*'
+         \ 'bib':   '\C\a*\[@\_\s*[^:\]]*'
          \ }
 
 
 function! Rmdcite#Complete(findstart, base) " {{{0
   if a:findstart
-    echom "findstart!"
+    echom "findstart! is TRUE"
     "
     " First call:  Find start of text to be completed
     "
     " Note: g:Rmdcite_complete_patterns is a dictionary where the keys are the
     " types of completion and the values are the patterns that must match for
-    " the given type.  Currently, it completes for asciidoc-bib citation
-    " syntax. [cite:] and [citenp:]
+    " the given type.  Supposed to complete for [@____] and [cite:____] syntax.
     "
     let pos  = col('.') - 1
     let line = getline('.')[:pos-1]
@@ -66,6 +65,7 @@ let s:completion_type = ''
 
 function! Rmdcite#bibtex(regexp) " {{{1
   let res = []
+  echom "running function Rmdcite#bibtex"
 
   let s:type_length = 4
   for m in s:bibtex_search(a:regexp)
@@ -99,6 +99,7 @@ let s:type_length = 0
 
 function! s:bibtex_search(regexp) " {{{2
   let res = []
+  echom "running function bibtex_search"
 
   " Find data from external bib files
   let bibfiles = join(s:bibtex_find_bibs(), ',')
@@ -153,6 +154,7 @@ endfunction
 
 function! s:bibtex_find_bibs() " {{{1
   let bibfiles = []
+  echom "running function bibtex_find_bibs"
 
   "
   " Search for added bibliographies in current file
