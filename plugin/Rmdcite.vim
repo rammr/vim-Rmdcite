@@ -254,6 +254,7 @@ function! Rmdcite#execute(exe) " {{{1
   if silent
     silent execute cmd
   else
+    echom "executing cmd"
     execute cmd
   endif
 
