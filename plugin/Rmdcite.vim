@@ -31,7 +31,6 @@ let g:Rmdcite_complete_patterns = {
 
 function! Rmdcite#Complete(findstart, base) " {{{0
   if a:findstart
-    echom "findstart! is TRUE"
     "
     " First call:  Find start of text to be completed
     "
@@ -42,7 +41,6 @@ function! Rmdcite#Complete(findstart, base) " {{{0
     let pos  = col('.') - 1
     let line = getline('.')[:pos-1]
     for [type, pattern] in items(g:Rmdcite_complete_patterns)
-      echom "testing pattern"
       if line =~ pattern . '$'
         let s:completion_type = type
         while pos > 0
@@ -59,6 +57,8 @@ function! Rmdcite#Complete(findstart, base) " {{{0
     return Rmdcite#bibtex(a:base)
   endif
 endfunction
+
+echom "end findstart"
 
 " Define auxiliary variables for completion
 let s:bibtex = 1
