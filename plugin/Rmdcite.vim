@@ -23,8 +23,8 @@ endfunction
 
 
 let g:Rmdcite_complete_patterns = {
-         \ 'bib0':  '\C\a*\[cite:\_\s*[^:\]]*',
          \ 'bib':   '\C\a*\[@\_\s*[^:\]]*',
+         \ 'bib0':  '\C\a*\[cite:\_\s*[^:\]]*',
          \ 'bibX':  'grukgruk'
          \ }
 
@@ -58,7 +58,6 @@ function! Rmdcite#Complete(findstart, base) " {{{0
   endif
 endfunction
 
-echom "end findstart"
 
 " Define auxiliary variables for completion
 let s:bibtex = 1
@@ -254,7 +253,6 @@ function! Rmdcite#execute(exe) " {{{1
   if silent
     silent execute cmd
   else
-    echom "executing cmd"
     execute cmd
   endif
 
